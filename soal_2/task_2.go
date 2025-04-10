@@ -20,21 +20,21 @@ func fakeLogin(username, password string)  {
 
     if resultUsername && resultPassword {
         if username == user["username"] && password == user["password"] {
-            fmt.Println("Login Berhasil")
+            fmt.Println("Success: Login Berhasil")
         } else {
             if username != user["username"] {
-                fmt.Println("Username anda salah")
+                fmt.Println("Failed: Username anda salah")
             } else {
-                fmt.Println("Password anda salah")
+                fmt.Println("Failed: Password anda salah")
             }
         }
     } else {
         if !resultUsername && !resultPassword {
-            fmt.Println(messageUsername, messagePassword)
+            fmt.Println("Failed:", messageUsername, "dan", messagePassword)
         } else if !resultUsername {
-            fmt.Println(messageUsername)
+            fmt.Println("Failed:", messageUsername)
         } else if !resultPassword {
-            fmt.Println(messagePassword)
+            fmt.Println("Failed:", messagePassword)
         }
     }
 
